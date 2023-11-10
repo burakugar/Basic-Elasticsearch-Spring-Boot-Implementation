@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "4d802059-ef91-4cd9-9ad1-f40d3d5c93b6",
+		"name": "Elasticsearch Service Collection",
+		"description": "Collection of requests for Elasticsearch Service API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25933064"
+	},
+	"item": [
+		{
+			"name": "Create Index",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"index\": \"your_index_name\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/es/index",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"es",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Document",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"indexName\": \"your_index_name\",\n    \"documentId\": \"your_document_id\",\n    \"fields\": {\n        \"field1\": \"value1\",\n        \"field2\": \"value2\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/es/document",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"es",
+						"document"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Document by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v1/es/document/your_index_name/your_document_id",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"es",
+						"document",
+						"your_index_name",
+						"your_document_id"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8080"
+		}
+	]
+}
